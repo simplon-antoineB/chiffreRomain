@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mot de passe</title>
+  </head>
+  <body>
+    <style type ="text/css">
+    label{
+      display: inline-block;
+      width: 150px;
+    }
+    input{
+      width: 200px;
+    }
+    #mdp{
+      width: 202px;
+    }
+    </style>
+    <form id="recupJs" action="#" method="get">
+    <fieldset>
+      <legend>L'ultime convertisseur</legend>
+      <div>
+        <label for="pseudo">Chiffre Arabe</label>
+        <input id="pseudo" name="chiffreEntre" type="texte"
+        placeholder="Saisissez le chiffre à convertir"/>
+      </div>
+
+    </div>
+      <button onclick=Romain() type="button">validation</button>
+    <div>
+    </fieldset>
+
+    </form>
+
+    <div id="res"/>
+
+    <script type="text/javascript">
+    var chiffreRomain= ["","I","II","III", "IV", "V", "VI", "VII", "VIII", "IX"];
+    var Dizaine=["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "C"];
+
+    function Romain(){
+      var chiffre = document.getElementById('recupJs');
+
+    if(chiffre.chiffreEntre.value.length === 2){
+      chiffre.chiffreEntre.value.charAt(0);
+      res.textContent=Dizaine[Number(chiffre.chiffreEntre.value.charAt(0))] + chiffreRomain[Number(chiffre.chiffreEntre.value.charAt(1))];
+    }
+
+    else{
+      res.textContent=chiffreRomain[Number(chiffre.chiffreEntre.value)];
+    }
+}
+
+
+    </script>
+  </body>
+</html>
